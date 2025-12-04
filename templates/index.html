@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Performance Prediction</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Employee Performance Prediction</span>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Enter Employee / Line Details</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/predict" class="row g-3">
+
+                <div class="col-md-4">
+                    <label class="form-label">Quarter</label>
+                    <select class="form-select" name="quarter" required>
+                        <option value="Quarter1">Quarter1</option>
+                        <option value="Quarter2">Quarter2</option>
+                        <option value="Quarter3">Quarter3</option>
+                        <option value="Quarter4">Quarter4</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Department</label>
+                    <select class="form-select" name="department" required>
+                        <option value="sewing">Sewing</option>
+                        <option value="finishing">Finishing</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Day</label>
+                    <select class="form-select" name="day" required>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Team</label>
+                    <input type="number" class="form-control" name="team" min="1" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Targeted Productivity</label>
+                    <input type="number" step="0.01" class="form-control"
+                           name="targeted_productivity" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">SMV</label>
+                    <input type="number" step="0.01" class="form-control" name="smv" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">WIP</label>
+                    <input type="number" class="form-control" name="wip" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Over Time</label>
+                    <input type="number" class="form-control" name="over_time" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Incentive</label>
+                    <input type="number" class="form-control" name="incentive" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Idle Time</label>
+                    <input type="number" step="0.01" class="form-control" name="idle_time" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Idle Men</label>
+                    <input type="number" class="form-control" name="idle_men" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">No. of Style Change</label>
+                    <input type="number" class="form-control" name="no_of_style_change" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">No. of Workers</label>
+                    <input type="number" class="form-control" name="no_of_workers" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-control" name="date" required>
+                </div>
+
+                <div class="col-12 text-center mt-3">
+                    <button type="submit" class="btn btn-success px-4">
+                        Predict Performance
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+}
+
+.card-header h4 {
+    letter-spacing: 0.5px;
+}
+
+button.btn-success {
+    font-size: 1.1rem;
+}
