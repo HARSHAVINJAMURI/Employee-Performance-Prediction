@@ -1,0 +1,17 @@
+# core
+numpy==1.26.4
+pandas==2.2.2
+
+# plotting 
+matplotlib==3.9.0
+seaborn==0.13.2
+
+# ML stack
+scikit-learn==1.4.2
+xgboost==2.0.3
+
+# web app
+Flask==3.0.3
+
+# production WSGI server (local + some deployments)
+gunicorn==22.0.0
